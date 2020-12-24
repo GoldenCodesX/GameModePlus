@@ -1,0 +1,7 @@
+name: GamemodePlus
+version: 1.0.0
+main: dev.goldencodes.gamemodeplus.GameModePlus
+api-version: 1.16
+authors: [ GoldenCodes ]
+description: A new and improved version of GamemodeX
+website: https://www.indeedious.site
