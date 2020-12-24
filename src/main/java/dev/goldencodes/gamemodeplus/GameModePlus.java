@@ -5,6 +5,7 @@ import dev.goldencodes.gamemodeplus.listeners.ClimbListener;
 import dev.goldencodes.gamemodeplus.listeners.DoubleJumpListener;
 import dev.goldencodes.gamemodeplus.listeners.ExtraDamageListener;
 import dev.goldencodes.gamemodeplus.utils.ChatUtil;
+import dev.goldencodes.gamemodeplus.utils.metrics.Metrics;
 import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
@@ -20,6 +21,10 @@ public final class GameModePlus extends JavaPlugin {
     @Override
     public void onEnable() {
         instance = this;
+
+        int pluginId = 9752;
+        new Metrics(this, pluginId);
+
         init();
     }
 

@@ -44,18 +44,21 @@ public class ExtraHealthCMD extends PlusCommand {
                     break;
 
                 case 1:
-                    if (ExtraHealthManager.getCanGetExtraHealth().contains(player.getUniqueId())) { // Disable
-                        ExtraHealthManager.remove(player.getUniqueId());
 
-                        PlayerUtil.message(player, "&cYour health has been reset!");
-                        PlayerUtil.health(player, 20.0);
-                    } else { // Enable
-                        ExtraHealthManager.add(player.getUniqueId());
+                    int argument = Integer.parseInt(args[0]);
 
-                        double argument = Double.parseDouble(args[0]);
+                    if (args[0].equalsIgnoreCase(String.valueOf(argument))) {
+                        if (ExtraHealthManager.getCanGetExtraHealth().contains(player.getUniqueId())) { // Disable
+                            ExtraHealthManager.remove(player.getUniqueId());
 
-                        PlayerUtil.message(player, "&aYour health has been increased by " + args[0]);
-                        PlayerUtil.health(player, argument);
+                            PlayerUtil.message(player, "&cYour health has been reset!");
+                            PlayerUtil.health(player, 20.0);
+                        } else { // Enable
+                            ExtraHealthManager.add(player.getUniqueId());
+
+                            PlayerUtil.message(player, "&aYour health has been increased by " + args[0]);
+                            PlayerUtil.health(player, Integer.parseInt(args[0]));
+                        }
                     }
                     break;
 

@@ -30,18 +30,22 @@ public class ClimbListener implements Listener {
     @EventHandler
     public void onPlayerMove(final PlayerMoveEvent event) {
         final Player player = event.getPlayer();
+
         if (ClimbManager.getCanClimb().contains(player.getUniqueId())) {
+
             final BlockFace bf = this.yawToFace(player.getLocation().getYaw());
             final Block block = player.getLocation().getBlock().getRelative(bf);
+
             if (block.getType() != Material.AIR) {
-                for (int i = 0; i < 300; ++i) {
+                for (int i = 0; i < 300; i++) {
 
                     final Block temp = block.getLocation().add(0.0, (double)i, 0.0).getBlock();
                     final Block opp = player.getLocation().add(0.0, (double)i, 0.0).getBlock();
                     final Block aboveOpp = opp.getLocation().add(0.0, 1.0, 0.0).getBlock();
 
                     int counter = 0;
-                    for (int k = 0; k < ClimbManager.getNoClimbBlocks().size(); ++k) {
+
+                    for (int k = 0; k < ClimbManager.getNoClimbBlocks().size(); k++) {
                         if (temp.getType() != Material.AIR && temp.getType().getId() != ClimbManager.getNoClimbBlocks().get(k)) {
                             ++counter;
                         }
@@ -61,7 +65,7 @@ public class ClimbListener implements Listener {
                 }
             }
             else {
-                for (int i = 0; i < this.getVines(player).size(); ++i) {
+                for (int i = 0; i < this.getVines(player).size(); i++) {
                     player.sendBlockChange(this.getVines(player).get(i).getLocation(), Material.AIR, (byte)0);
                 }
                 this.getVines(player).clear();
@@ -76,6 +80,7 @@ public class ClimbListener implements Listener {
         }
 
         final ArrayList temp = new ArrayList();
+
         return (ArrayList<Block>)temp;
     }
 
