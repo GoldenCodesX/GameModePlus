@@ -1,5 +1,4 @@
 # GameModePlus
-![TravisCI](https://travis-ci.org/hugmanrique/BuycraftAPI.svg?branch=master)
 
 ## Usage
 To start off with this plugin feel free to do ```/GameModePlusHelp``` (Aliases Available) in-game, you will then be shown all the commands and defintions of this Plugin.
