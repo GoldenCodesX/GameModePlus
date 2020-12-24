@@ -1,4 +1,8 @@
 # GameModePlus
+# About
+This Plugin is the new and improved version of [GamemodeX](), this version as various upgrades, including configuration of messages and Languages, multiple commands to manage each ability correctly, and much more back-end improvements as well!
+
+```NOTE:``` This Plugin is still under Development
 
 ## Usage
 To start off with this plugin feel free to do ```/GameModePlusHelp``` (Aliases Available) in-game, you will then be shown all the commands and defintions of this Plugin.
