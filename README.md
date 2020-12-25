@@ -14,4 +14,4 @@ Feel free to download this Plugin [here](https://www.spigotmc.org/resources/game
 This project is licensed under the Apache License. You can read all the license terms [here](LICENSE)
 
 ## Donate
-If you think this project is useful for you or your server, please, consider donating [here](https://paypal.me/devin54rodriguez)
+If you think this project is useful for you or your server, please, consider donating [here](https://www.paypal.com/paypalme/devin54rod)
