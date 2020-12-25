@@ -4,6 +4,8 @@ import dev.goldencodes.gamemodeplus.commands.*;
 import dev.goldencodes.gamemodeplus.listeners.ClimbListener;
 import dev.goldencodes.gamemodeplus.listeners.DoubleJumpListener;
 import dev.goldencodes.gamemodeplus.listeners.ExtraDamageListener;
+import dev.goldencodes.gamemodeplus.managers.file.FileManager;
+import dev.goldencodes.gamemodeplus.managers.update.Updater;
 import dev.goldencodes.gamemodeplus.utils.ChatUtil;
 import dev.goldencodes.gamemodeplus.utils.metrics.Metrics;
 import lombok.Getter;
@@ -18,6 +20,9 @@ public final class GameModePlus extends JavaPlugin {
     @Getter
     private static GameModePlus instance;
 
+    @Getter
+    private final static String PREFIX = "&c[&eGameModePlus&c]";
+
     @Override
     public void onEnable() {
         instance = this;
@@ -29,7 +34,10 @@ public final class GameModePlus extends JavaPlugin {
     }
 
     public void init() {
-        ChatUtil.log("&aGameModePlus has successfully been enabled! \n&aCreated By: &eGoldenCodes", Level.INFO);
+        ChatUtil.log(getPREFIX() + " &aGameModePlus has successfully been enabled! \n&aCreated By: &eGoldenCodes", Level.INFO);
+
+        new Updater().update(83746);
+        new FileManager(this);
 
         registerCommands();
         registerListeners();
@@ -44,11 +52,11 @@ public final class GameModePlus extends JavaPlugin {
     }
 
     public void registerCommands() {
+        new HelpCMD().register();
         new ExtraHealthCMD().register();
         new DoubleJumpCMD().register();
         new ClimbCMD().register();
         new ExtraDamageCMD().register();
-        new HelpCMD().register();
     }
 
     @Override

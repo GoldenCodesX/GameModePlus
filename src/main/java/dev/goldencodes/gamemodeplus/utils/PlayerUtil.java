@@ -12,6 +12,7 @@ public class PlayerUtil {
 
     public static void fly(Player player, boolean access) {
         player.setAllowFlight(access);
+        player.setFlying(access);
     }
 
     public static void message(Player player, String message) {

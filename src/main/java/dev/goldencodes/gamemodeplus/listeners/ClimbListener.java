@@ -15,18 +15,16 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ClimbListener implements Listener {
-    /**
-     * @TODO: Make this code more organized and readable
-     */
+
     Map<String, ArrayList<Block>> vineMap;
     public GameModePlus plugin;
 
     public ClimbListener(final GameModePlus instance) {
-        this.vineMap = new HashMap<String, ArrayList<Block>>();
-        this.plugin = instance;
+        this.vineMap = new HashMap<>();
         this.plugin = instance;
     }
 
+    @Deprecated
     @EventHandler
     public void onPlayerMove(final PlayerMoveEvent event) {
         final Player player = event.getPlayer();
@@ -39,15 +37,15 @@ public class ClimbListener implements Listener {
             if (block.getType() != Material.AIR) {
                 for (int i = 0; i < 300; i++) {
 
-                    final Block temp = block.getLocation().add(0.0, (double)i, 0.0).getBlock();
-                    final Block opp = player.getLocation().add(0.0, (double)i, 0.0).getBlock();
+                    final Block temp = block.getLocation().add(0.0, i, 0.0).getBlock();
+                    final Block opp = player.getLocation().add(0.0, i, 0.0).getBlock();
                     final Block aboveOpp = opp.getLocation().add(0.0, 1.0, 0.0).getBlock();
 
                     int counter = 0;
 
                     for (int k = 0; k < ClimbManager.getNoClimbBlocks().size(); k++) {
                         if (temp.getType() != Material.AIR && temp.getType().getId() != ClimbManager.getNoClimbBlocks().get(k)) {
-                            ++counter;
+                            counter++;
                         }
                     }
                     if (counter != ClimbManager.getNoClimbBlocks().size()) {
@@ -79,7 +77,7 @@ public class ClimbListener implements Listener {
             return this.vineMap.get(player.getName());
         }
 
-        final ArrayList temp = new ArrayList();
+        ArrayList temp = new ArrayList();
 
         return (ArrayList<Block>)temp;
     }

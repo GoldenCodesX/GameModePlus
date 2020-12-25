@@ -23,13 +23,13 @@ public abstract class HelpCMDUtil {
         lastButton.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new ComponentBuilder(ChatUtil.translate("&eJoin the Support Server!")).create()));
         lastButton.setClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, discordLink));
 
-        TextComponent lastMessage = new TextComponent(ChatUtil.translate(" &e&lNeed further assistance? Join GoldenCodes Support Server "));
+        TextComponent lastMessage = new TextComponent(ChatUtil.translate(" &e&lNeed further assistance? &e&lJoin GoldenCodes Support Server "));
         lastMessage.addExtra(lastButton);
 
         PlayerUtil.message(player, "&e>>> &e&lGameModePlus &aHelp &e<<<", true);
-        PlayerUtil.message(player, "&7&l[&e&lGMP&7&l] &e> " + firstHelp, false);
-        PlayerUtil.message(player, "&7&l[&e&lGMP&7&l] &e> " + secondHelp, false);
-        PlayerUtil.message(player, "&7&l[&e&lGMP&7&l] &e> " + thirdHelp, false);
+        PlayerUtil.message(player, "&7&l[&e&lGMP&7&l] &e> " + firstHelp, true);
+        PlayerUtil.message(player, "&7&l[&e&lGMP&7&l] &e> " + secondHelp, true);
+        PlayerUtil.message(player, "&7&l[&e&lGMP&7&l] &e> " + thirdHelp, true);
         PlayerUtil.message(player, "&7&l[&e&lGMP&7&l] &e> " + fourthHelp, true);
         PlayerUtil.messageSpigot(player, lastMessage);
     }

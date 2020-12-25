@@ -1,0 +1,23 @@
+# GitHub: https://github.com/Indeediouss
+# KeyBase: https://keybase.io/Indeedious
+# Created By GoldenCodes
+
+# The following are Configurable 'English' Messages for this Plugin
+EnglishMessages:
+  ClimbMessages:
+    EnabledClimb:
+    DisabledClimb:
+
+  DoubleJumpMessages:
+    EnabledDoubleJump:
+    DisabledDoubleJump:
+
+  OnePunchMessages:
+    EnabledOnePunch:
+    DisabledOnePunch:
+
+  HealthMessages:
+    IncreasedHealth:
+    ResetHealth:
+
+

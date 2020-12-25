@@ -19,11 +19,10 @@ public class DoubleJumpListener implements Listener {
         if (!PlayerUtil.isCreative(player) && DoubleJumpManager.getCanDoubleJump().contains(player.getUniqueId())) {
             event.setCancelled(true);
 
-            player.setAllowFlight(false);
-            player.setFlying(false);
+            PlayerUtil.fly(player, true);
 
-            player.setVelocity(player.getLocation().getDirection().multiply(1.2).setY(0.9));
-            player.playSound(player.getLocation(), Sound.ENTITY_ENDER_DRAGON_FLAP, 1, 1);
+            player.setVelocity(player.getLocation().getDirection().multiply(1.5).setY(1));
+            player.playSound(player.getLocation(), Sound.ENTITY_BLAZE_SHOOT, 1, 1);
         }
     }
 
@@ -34,12 +33,12 @@ public class DoubleJumpListener implements Listener {
         if (!PlayerUtil.isCreative(player) && player.getLocation().subtract(0, 1, 0).getBlock().getType() != Material.AIR
                 && DoubleJumpManager.getCanDoubleJump().contains(player.getUniqueId()) && !player.isFlying()) {
 
-            player.setAllowFlight(true);
+           PlayerUtil.fly(player ,true);
 
         } else {
             if (PlayerUtil.isCreative(player)) {
 
-                player.setAllowFlight(false);
+                PlayerUtil.fly(player, false);
 
             }
         }

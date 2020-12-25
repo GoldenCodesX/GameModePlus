@@ -12,19 +12,24 @@ public class ExtraDamageListener implements Listener {
 
     @EventHandler
     public void onHit(EntityDamageByEntityEvent event) {
-        Player player = (Player) event.getDamager();
 
-        boolean contains = ExtraDamageManager.getCanDoExtraDamage().contains(player.getUniqueId());
+        boolean contains = ExtraDamageManager.getCanDoExtraDamage().contains(event.getDamager().getUniqueId());
 
         try {
             if (contains) {
                 if (event.getDamager() instanceof Player) {
+
                     if (event.getEntity() instanceof LivingEntity) {
+
                         ((LivingEntity) event.getEntity()).setHealth(0.0);
+
                     }
                 } else if (event.getDamager() instanceof Projectile) {
+
                     final Projectile projectile = (Projectile) event.getDamager();
+
                     if (projectile.getShooter() instanceof Player) {
+
                         if (event.getEntity() instanceof LivingEntity) {
                             ((LivingEntity) event.getEntity()).setHealth(0.0);
                         }
