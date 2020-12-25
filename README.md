@@ -1,6 +1,6 @@
 # GameModePlus
 # About
-This Plugin is the new and improved version of [GamemodeX](https://github.com/Indeediouss/GamemodeX), this version as various upgrades, including configuration of messages and Languages, multiple commands to manage each ability correctly, and much more back-end improvements as well!
+This Plugin is the new and improved version of [GamemodeX](https://github.com/Indeediouss/GamemodeX), this version has various upgrades, including configuration of messages and Languages, multiple commands to manage each ability correctly, and much more back-end improvements as well!
 
 ```NOTE:``` This Plugin is still under Development
 
